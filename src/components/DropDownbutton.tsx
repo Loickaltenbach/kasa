@@ -11,9 +11,9 @@ export const DropDownButton = (props: DropDownButtonProps) => {
     const [open, setOpen] = React.useState(false);
     const formattedText = () => {
         if(typeof props.text !== 'string') {
-            return <p style={{color: '#FF6060'}}>{props.text.toString().replaceAll(",", "\n")}</p>
+            return props.text.toString().split(',')
         } else {
-            return <p style={{color: '#FF6060'}}>{props.text}</p>
+            return [props.text]
         }
     }
 
@@ -38,8 +38,8 @@ export const DropDownButton = (props: DropDownButtonProps) => {
                 <p style={{color: 'white', padding: 0, margin: 0}}>{props.title}</p>
                 <img src={!open ? downArrow : upArrow} height={30} width={30} color={'white'} />
             </div>
-            <div style={{backgroundColor: '#F7F7F7', display: open ? 'table' : 'none', padding: 10, borderRadius: 5, width: 500}}>
-                {formattedText()}
+            <div style={{backgroundColor: '#F7F7F7', display: open ? 'table' : 'none', padding: 10, borderRadius: 5, minWidth: 500}}>
+                {formattedText().map((text) => <p style={{color: "#FF6060"}} key={text}>{text}</p>)}
             </div>
         </div>
     )

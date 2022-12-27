@@ -27,7 +27,7 @@ const LocationCard = (props: LocationCardProps) => {
                 style={{
                     textAlign: "start", 
                     paddingLeft: 20, 
-                    paddingTop: 175,
+                    paddingTop: 155,
                     width: "75%", 
                     color: "white"
                 }}>

@@ -31,12 +31,12 @@ export const ImageSlider = (props: ImageSliderProps) => {
                 onClick={() => goToPrevious()}
                 style={{
                 position: 'absolute',
-                top: '25%',
-                left: 52,
+                top: '30%',
+                left: 75,
                 fontSize: 125,
                 color: "#fff",
                 zIndex: 1,
-                cursor: 'pointer'
+                cursor: 'pointer',
                 }}
             >
                 {"<"}
@@ -45,8 +45,8 @@ export const ImageSlider = (props: ImageSliderProps) => {
                 onClick={() => goToNext()}
                 style={{
                     position: 'absolute',
-                    top: '25%',
-                    right: 55,
+                    top: '30%',
+                    right: 75,
                     fontSize: 125,
                     color: "#fff",
                     zIndex: 1,
