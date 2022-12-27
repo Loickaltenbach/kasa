@@ -8,6 +8,7 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/AboutScreen';
 import HousingScreen from './screens/HousingScreen';
+import ErrorScreen from './screens/ErrorScreen';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/accueil' element={<HomeScreen />} />
           <Route path='/details' element={<HousingScreen />} />
           <Route path='/apropos' element={<AboutScreen />} />
+          <Route path='*' element={<ErrorScreen />} />
         </Routes>
       </BrowserRouter>
     </div>
