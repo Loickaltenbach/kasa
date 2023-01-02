@@ -1,3 +1,5 @@
+import useWindowDimensions from "../utils/utils";
+
 interface LocationCardProps {
     title: string,
     picture: string,
@@ -13,9 +15,9 @@ const LocationCard = (props: LocationCardProps) => {
                 cursor: 'pointer',
                 backgroundColor: "black", 
                 borderRadius: 5, 
-                height: 250, 
-                width: 250, 
-                margin: 25,
+                height: useWindowDimensions() <= 480 ? 200 : 250, 
+                width: useWindowDimensions() <= 480 ? '82%' : 250, 
+                margin: 20,
                 backgroundImage: `url(${props.picture})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -27,7 +29,7 @@ const LocationCard = (props: LocationCardProps) => {
                 style={{
                     textAlign: "start", 
                     paddingLeft: 20, 
-                    paddingTop: 155,
+                    paddingTop: useWindowDimensions() <= 480 ? 120 : 155,
                     width: "75%", 
                     color: "white"
                 }}>

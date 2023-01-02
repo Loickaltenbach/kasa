@@ -25,3 +25,13 @@ h3 {
     font-size: 36;
     line-height: 142.6%;
 }
+
+@media only screen and (min-width : 321px) {
+    p {
+        font-size: 14;
+    }
+    
+    h3 {
+        font-size: 26;
+    }
+}
