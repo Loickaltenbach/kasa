@@ -23,9 +23,9 @@ const HomeScreen = () => {
                     display: 'flex',
                     flexWrap: "wrap",
                     justifyContent: "center",
-                    backgroundColor: useWindowDimensions() <= 480 ? "white" : "#F7F7F7", 
+                    backgroundColor: useWindowDimensions().width <= 480 ? "white" : "#F7F7F7", 
                     borderRadius: 25, 
-                    margin: useWindowDimensions() <= 480 ? 20 : 50
+                    margin: useWindowDimensions().width <= 480 ? 20 : 50
                 }}
             >
                 {locations.map((location) => {

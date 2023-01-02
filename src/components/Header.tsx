@@ -25,21 +25,21 @@ const Header = (props:HeaderProps) => {
             <img 
                 src={logo} 
                 alt='logo' 
-                width={useWindowDimensions() <= 480 ? 80 : 150} 
-                height={useWindowDimensions() <= 480 ? 30 : 50} 
-                style={{paddingLeft: useWindowDimensions() <= 480 ? 20 : 50}} 
+                width={useWindowDimensions().width <= 480 ? 80 : 150} 
+                height={useWindowDimensions().width <= 480 ? 30 : 50} 
+                style={{paddingLeft: useWindowDimensions().width <= 480 ? 20 : 50}} 
             />
             <ul 
                 style={{
                     listStyle: "none",
                     display: 'flex', 
                     flexDirection: 'row', 
-                    paddingRight: useWindowDimensions() <= 480 ? 0 : 30
+                    paddingRight: useWindowDimensions().width <= 480 ? 0 : 30
                 }} 
             >
                 {props.routes?.map((route) => {
                     return(
-                        <NavLink key={route} style={{textDecoration: link(route) === props.active ? "underline" : "none", paddingRight: useWindowDimensions() <= 480 ? 20 : 30, color: "#FF6060"}} to={link(route)}>
+                        <NavLink key={route} style={{textDecoration: link(route) === props.active ? "underline" : "none", paddingRight: useWindowDimensions().width <= 480 ? 20 : 30, color: "#FF6060"}} to={link(route)}>
                             <li>{route}</li>
                         </NavLink>
                     )

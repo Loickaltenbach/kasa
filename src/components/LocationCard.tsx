@@ -15,8 +15,8 @@ const LocationCard = (props: LocationCardProps) => {
                 cursor: 'pointer',
                 backgroundColor: "black", 
                 borderRadius: 5, 
-                height: useWindowDimensions() <= 480 ? 200 : 250, 
-                width: useWindowDimensions() <= 480 ? '82%' : 250, 
+                height: useWindowDimensions().width <= 480 ? 200 : 250, 
+                width: useWindowDimensions().width <= 480 ? '82%' : 250, 
                 margin: 20,
                 backgroundImage: `url(${props.picture})`,
                 backgroundRepeat: 'no-repeat',
@@ -29,7 +29,7 @@ const LocationCard = (props: LocationCardProps) => {
                 style={{
                     textAlign: "start", 
                     paddingLeft: 20, 
-                    paddingTop: useWindowDimensions() <= 480 ? 120 : 155,
+                    paddingTop: useWindowDimensions().width <= 480 ? 120 : 155,
                     width: "75%", 
                     color: "white"
                 }}>
