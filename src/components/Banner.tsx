@@ -1,3 +1,5 @@
+import useWindowDimensions from "../utils/utils";
+
 interface BannerProps {
     type: string,
     image: string
@@ -10,13 +12,14 @@ const Banner = (props:BannerProps) => {
                 marginTop: 50,
                 borderRadius: 25, 
                 backgroundColor: "black",
-                marginLeft: 50, 
-                marginRight: 55,
+                marginLeft: useWindowDimensions().width <= 480 ? 20 : 50, 
+                marginRight: useWindowDimensions().width <= 480 ? 20 : 55,
                 justifyContent: "center",
                 alignItems: "center",
                 overflow: "hidden",
                 position: "relative",
-                height: 250,
+                height: useWindowDimensions().width <= 480 ? 150 : 250,
+                minHeight: useWindowDimensions().width <= 480 ? 150 : 250,
             }}
         >
             <img
@@ -31,13 +34,13 @@ const Banner = (props:BannerProps) => {
             />
             {props.type === 'default' && 
                 <p style={{
-                        fontSize: 40,
+                        fontSize: useWindowDimensions().width <= 480 ? 20 : 40,
                         color: "white",
-                        textAlign: "center",
+                        textAlign: useWindowDimensions().width <= 480 ? "left" : "center",
                         position: "absolute",
                         top: 0,
                         bottom: 0,
-                        left: 0,
+                        left: useWindowDimensions().width <= 480 ? 20 : 0,
                         right: 0,
                         height: "fit-content",
                         margin: "auto",

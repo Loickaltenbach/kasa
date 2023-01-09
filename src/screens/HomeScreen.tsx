@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import LocationCard from '../components/LocationCard';
 import data from "../data.json";
 import banniere from "../assets/banniere.png";
+import useWindowDimensions from '../utils/utils';
 
 const HomeScreen = () => {
     const locations = data.locations;
@@ -22,9 +23,9 @@ const HomeScreen = () => {
                     display: 'flex',
                     flexWrap: "wrap",
                     justifyContent: "center",
-                    backgroundColor: "#F7F7F7", 
+                    backgroundColor: useWindowDimensions().width <= 480 ? "white" : "#F7F7F7", 
                     borderRadius: 25, 
-                    margin: 50
+                    margin: useWindowDimensions().width <= 480 ? 20 : 50
                 }}
             >
                 {locations.map((location) => {

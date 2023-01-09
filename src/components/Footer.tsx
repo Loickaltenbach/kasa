@@ -1,22 +1,20 @@
-import { NavLink } from 'react-router-dom';
 import logoFooter from '../assets/logoFooter.png';
+import useWindowDimensions from '../utils/utils';
 
 const Footer = () => {
     return (
         <div 
             style={{
                 display: "flex",
-                width: '100%',
-                height: '100%',
-                paddingTop: 30,
+                paddingTop: 20,
+                height: 100,
                 backgroundColor: "black",
-                alignItems: "center",
                 justifyContent: "center"
             }}
         >
             <div>
                 <img src={logoFooter} width={100} height={35} />
-                <p style={{color: "white", textAlign: "center"}}>© 2020 Kasa. All rights reserved</p>
+                <p style={{color: "white", textAlign: "center", fontSize: useWindowDimensions().width <= 480 ? 12 : 16}}>© 2020 Kasa. All rights reserved</p>
             </div>
         </div>
     );

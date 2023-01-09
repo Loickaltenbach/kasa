@@ -1,3 +1,5 @@
+import useWindowDimensions from "../utils/utils";
+
 interface LocationCardProps {
     title: string,
     picture: string,
@@ -6,6 +8,10 @@ interface LocationCardProps {
 }
 
 const LocationCard = (props: LocationCardProps) => {
+
+    const height = useWindowDimensions().width <= 480 ? 200 : 250;
+    const width = useWindowDimensions().width <= 480 ? '100%' : 250;
+
     return (
         <article    
             onClick={props.onClick}
@@ -13,21 +19,21 @@ const LocationCard = (props: LocationCardProps) => {
                 cursor: 'pointer',
                 backgroundColor: "black", 
                 borderRadius: 5, 
-                height: 250, 
-                width: 250, 
-                margin: 25,
-                backgroundImage: `url(${props.picture})`,
+                height: useWindowDimensions().width <= 480 ? 200 : 250, 
+                width: useWindowDimensions().width <= 480 ? '100%' : 250, 
+                margin: 20,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url(${props.picture})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                display: 'grid'
+                backgroundSize: `${width}, ${height}`,
+                display: 'grid',
             }}
         >
             <p 
                 style={{
                     textAlign: "start", 
                     paddingLeft: 20, 
-                    paddingTop: 155,
+                    paddingTop: useWindowDimensions().width <= 480 ? 120 : 155,
                     width: "75%", 
                     color: "white"
                 }}>
