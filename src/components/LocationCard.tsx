@@ -8,6 +8,10 @@ interface LocationCardProps {
 }
 
 const LocationCard = (props: LocationCardProps) => {
+
+    const height = useWindowDimensions().width <= 480 ? 200 : 250;
+    const width = useWindowDimensions().width <= 480 ? '100%' : 250;
+
     return (
         <article    
             onClick={props.onClick}
@@ -16,13 +20,13 @@ const LocationCard = (props: LocationCardProps) => {
                 backgroundColor: "black", 
                 borderRadius: 5, 
                 height: useWindowDimensions().width <= 480 ? 200 : 250, 
-                width: useWindowDimensions().width <= 480 ? '82%' : 250, 
+                width: useWindowDimensions().width <= 480 ? '100%' : 250, 
                 margin: 20,
-                backgroundImage: `url(${props.picture})`,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url(${props.picture})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                display: 'grid'
+                backgroundSize: `${width}, ${height}`,
+                display: 'grid',
             }}
         >
             <p 
