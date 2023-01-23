@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 .App {
+    max-width: 1080px;
+    margin-left: auto; 
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 100px);
@@ -15,7 +18,6 @@ p {
     font-weight: 500;
     font-style: normal;
     font-size: 18;
-    line-height: 142.6%;
 }
 
 h3 {
@@ -23,5 +25,4 @@ h3 {
     font-weight: 800;
     font-style: normal;
     font-size: 36;
-    line-height: 142.6%;
 }

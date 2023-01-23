@@ -22,10 +22,10 @@ const HousingScreen = () => {
             <div style={{marginLeft: useWindowDimensions().width <= 480 ? 20 : 50, marginRight: useWindowDimensions().width <= 480 ? 25 : 55}}>
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                     <div>
-                        <h3 style={{color: "#FF6060", fontSize: useWindowDimensions().width <= 480 ? 18 : 22}}>{location?.title}</h3>
-                        <p style={{color: "#FF6060", fontSize: useWindowDimensions().width <= 480 ? 14 : 18}}>{location?.location}</p>
+                        <p style={{color: "#FF6060", lineHeight: '50%', fontSize: useWindowDimensions().width <= 480 ? 18 : 22, fontWeight: 'bold'}}>{location?.title}</p>
+                        <p style={{color: "#FF6060", lineHeight: '50%', fontSize: useWindowDimensions().width <= 480 ? 14 : 18}}>{location?.location}</p>
                     </div>
-                    {!(useWindowDimensions().width <= 480) && <Host name={location?.host.name} picture={location?.host.picture} />}
+                    {useWindowDimensions().width >= 480 && <Host name={location?.host.name} picture={location?.host.picture} />}
                 </div>
                 <div style={{display: 'flex', flexDirection: useWindowDimensions().width <= 480 ? 'column' : 'row', justifyContent: 'space-between'}}>
                     <Tags text={location?.tags} />
@@ -35,7 +35,7 @@ const HousingScreen = () => {
                     </div>
                 </div>
             </div>
-            <div style={{display: 'flex', margin: useWindowDimensions().width <= 480 ? 20 : 50, flexDirection: useWindowDimensions().width <= 480 ? 'column' : 'row', justifyContent: 'space-between'}}>
+            <div style={{display: 'flex', marginRight: useWindowDimensions().width <= 480 ? 20 : 50, marginLeft: useWindowDimensions().width <= 480 ? 20 : 50, flexDirection: useWindowDimensions().width <= 480 ? 'column' : 'row', justifyContent: 'space-between'}}>
                 <DropDownButton containerWidth={useWindowDimensions().width <= 480 ? '100%' : 450} contentWidth={useWindowDimensions().width <= 480 ? '95%' : 430} title={'Description'} text={`${location?.description}`} />
                 <DropDownButton containerWidth={useWindowDimensions().width <= 480 ? '100%' : 450} contentWidth={useWindowDimensions().width <= 480 ? '95%' : 430} title={'Equipements'} text={location?.equipments} />
             </div>

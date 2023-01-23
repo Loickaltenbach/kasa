@@ -1,11 +1,7 @@
 import fullStar from "../assets/fullStar.png"
 import emptyStar from "../assets/emptyStar.png"
 
-interface RatingsProps {
-    stars: number
-}
-
-export const Ratings = (props: RatingsProps) => {
+export const Ratings = (props) => {
 
     const stars = () => {
         let tmp = [];

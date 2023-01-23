@@ -1,15 +1,7 @@
 import React from "react"
-import downArrow from "../assets/arrowDown.png"
-import upArrow from "../assets/arrowUp.png"
+import { ArrowDown, ArrowUp } from "../utils/icons";
 
-interface DropDownButtonProps {
-    title: string,
-    text: string | string[],
-    containerWidth: number | string,
-    contentWidth: number | string
-}
-
-export const DropDownButton = (props: DropDownButtonProps) => {
+export const DropDownButton = (props) => {
     const [open, setOpen] = React.useState(false);
     const formattedText = () => {
         if(typeof props.text !== 'string') {
@@ -36,7 +28,7 @@ export const DropDownButton = (props: DropDownButtonProps) => {
                 }}
             >
                 <p style={{color: 'white', paddingLeft: 20, margin: 0}}>{props.title}</p>
-                <img src={!open ? downArrow : upArrow} height={30} width={30} style={{paddingRight: 10}} />
+                {!open ? <ArrowDown height={36} width={36} fill={"white"} /> : <ArrowUp height={36} width={36} fill={"white"} />}
             </div>
             <div style={{backgroundColor: '#F7F7F7', display: open ? 'table' : 'none', padding: 10, width: props.contentWidth, borderRadius: 5}}>
                 {formattedText().map((text) => <p style={{color: "#FF6060"}} key={text}>{text}</p>)}

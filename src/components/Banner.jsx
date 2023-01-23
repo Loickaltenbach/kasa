@@ -1,11 +1,6 @@
 import useWindowDimensions from "../utils/utils";
 
-interface BannerProps {
-    type: string,
-    image: string
-}
-
-const Banner = (props:BannerProps) => {
+const Banner = ({type, image}) => {
     return (
         <article 
             style={{
@@ -23,7 +18,7 @@ const Banner = (props:BannerProps) => {
             }}
         >
             <img
-                src={props.image} 
+                src={image} 
                 alt='banniere'
                 style={{
                     opacity: 0.5, 
@@ -32,7 +27,7 @@ const Banner = (props:BannerProps) => {
                     minHeight: "100%"
                 }} 
             />
-            {props.type === 'default' && 
+            {type === 'default' && 
                 <p style={{
                         fontSize: useWindowDimensions().width <= 480 ? 20 : 40,
                         color: "white",
