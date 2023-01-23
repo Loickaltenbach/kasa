@@ -1,13 +1,6 @@
 import useWindowDimensions from "../utils/utils";
 
-interface LocationCardProps {
-    title: string,
-    picture: string,
-    onClick: React.MouseEventHandler<HTMLElement> | undefined,
-    id: string
-}
-
-const LocationCard = (props: LocationCardProps) => {
+const LocationCard = (props) => {
 
     const height = useWindowDimensions().width <= 480 ? 200 : 250;
     const width = useWindowDimensions().width <= 480 ? '100%' : 250;

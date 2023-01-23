@@ -2,14 +2,9 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import useWindowDimensions from '../utils/utils';
 
-interface HeaderProps {
-    routes?: string[],
-    active?: string,
-}
+const Header = (props) => {
 
-const Header = (props:HeaderProps) => {
-
-    const link = (route: string) => "/" + `${route.replace(" ", "").toString().trim().toLowerCase()}`
+    const link = (route) => "/" + `${route.replace(" ", "").toString().trim().toLowerCase()}`
 
     return (
         <div 
